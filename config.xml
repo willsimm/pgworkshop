@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "org.coenraets.employeedirectory"
         versionCode = "10"
-        version     = "1.1.0">
+        version     = "1.1.1">
  
     <name>Tiree Energy Pulse</name>
  
@@ -23,6 +23,6 @@
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
 
-    <access origin="catalystproject.org.uk/" subdomains="true"/>
+    <access origin="http://catalystproject.org.uk/" subdomains="true"/>
  
 </widget>
