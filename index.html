@@ -2,7 +2,7 @@
   <head>
     <title>Resume Example</title>
 
-    <!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script src="lib/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" charset="utf-8">
 /*var resumes=0;
@@ -38,14 +38,31 @@
 var resumes=0;
     function onLoad(){
     	window.addEventListener('touchstart', hello, false);
-   function hello() {
-        alert('hello');
 
+
+    	document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        document.addEventListener("resume", onResume, false);
+    }
+   function onResume() {
+		$('#resumes').html("res");
+   }
+
+
+
+
+  function hello() {
+        
          resumes++;
         
             $('#resumes').html(resumes);
       }
-    }
+
+
 
     </script>
   </head>
