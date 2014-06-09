@@ -42,7 +42,7 @@ var app = {
     //
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
-        alert('hello');
+        //alert('hello');
     }
 
     // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
