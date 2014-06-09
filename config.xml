@@ -5,14 +5,14 @@
         versionCode = "10"
         version     = "1.1.0">
  
-    <name>Employee Directory</name>
+    <name>Tiree Energy Pulse</name>
  
     <description>
-        A simple employee directory application
+        Catalyst OnSupply
     </description>
  
-    <author href="http://coenraets.org" email="ccoenraets@gmail.com">
-        Christophe Coenraets
+    <author href="http://www.catalystproject.org.uk" email="catalyst@lancaster.ac.uk">
+        Pete Newman and Will Simm
     </author>
  
     <feature name="http://api.phonegap.com/1.0/camera"/>
