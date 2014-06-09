@@ -48,7 +48,16 @@ var app = {
     // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     //
     function onDeviceReady() {
-        document.addEventListener("resume", onResume, false);
+        document.addEventListener("resume", function() {
+            setTimeout(function(){
+                navigator.notification.alert({
+                    "Aaaaaan we're back!!",
+                    noticeDismissed,
+                    "Missed You",
+                    "OK (but that's kinda creepy)"
+                });
+            }, 0);
+        });
     }
 
     // Handle the resume event
