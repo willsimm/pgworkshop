@@ -25,12 +25,37 @@ var app = {
 
     initialize: function() {
          var self = this;
-        this.store = new MemoryStore(function() {
-        self.showAlert('Store Initialized', 'Info');
-    });
+        this.store = new MemoryStore();
         $('.search-key').on('keyup', $.proxy(this.findByName, this));
     }
 
 };
 
-app.initialize();
+//app.initialize();
+
+var resumes=0;
+    // Call onDeviceReady when PhoneGap is loaded.
+    //
+    // At this point, the document has loaded but phonegap-1.2.0.js has not.
+    // When PhoneGap is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+    //
+    function onDeviceReady() {
+        document.addEventListener("resume", onResume, false);
+    }
+
+    // Handle the resume event
+    //
+    function onResume() {
+        resumes++;
+        function() {
+            $('.resumes').html(resumes);
+        }
+
+    }
