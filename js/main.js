@@ -33,7 +33,7 @@ var app = {
 
 //app.initialize();
 
-var resumes=0;
+    var resumes=0;
     // Call onDeviceReady when PhoneGap is loaded.
     //
     // At this point, the document has loaded but phonegap-1.2.0.js has not.
@@ -42,6 +42,7 @@ var resumes=0;
     //
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
+        alert('hello');
     }
 
     // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
@@ -54,8 +55,13 @@ var resumes=0;
     //
     function onResume() {
         resumes++;
-        function() {
+        
             $('#resumes').html(resumes);
-        }
+        
 
     }
+
+    window.addEventListener('touchstart', hello, false);
+   function hello() {
+        alert('hello');
+      }
