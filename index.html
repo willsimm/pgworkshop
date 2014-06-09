@@ -2,10 +2,10 @@
   <head>
     <title>Resume Example</title>
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
     <script src="lib/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" charset="utf-8">
-var resumes=0;
+/*var resumes=0;
     // Wait for device API libraries to load
     //
     function onLoad() {
@@ -34,6 +34,17 @@ var resumes=0;
         
             $('#resumes').html(resumes);
 
+    }*/
+var resumes=0;
+    function onLoad(){
+    	window.addEventListener('touchstart', hello, false);
+   function hello() {
+        alert('hello');
+
+         resumes++;
+        
+            $('#resumes').html(resumes);
+      }
     }
 
     </script>
@@ -46,7 +57,7 @@ var resumes=0;
 
 Must be someone working on this! Please download the app again later.
 
-<div id="resumes" style="position:absolute;top:0px;right:0px;width=10px;height=10px;background:white">
+<div id="resumes" style="position:absolute;top:0px;left:0px;width=10px;height=10px;background:white">
 	10</div>
 
 
