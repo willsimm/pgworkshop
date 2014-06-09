@@ -55,7 +55,7 @@ var resumes=0;
     function onResume() {
         resumes++;
         function() {
-            $('.resumes').html(resumes);
+            $('#resumes').html(resumes);
         }
 
     }
