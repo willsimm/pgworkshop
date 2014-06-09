@@ -1,28 +1,57 @@
 <html>
+  <head>
+    <title>Resume Example</title>
 
-<body  onload="onLoad()">
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script src="lib/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+var resumes=0;
+    // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        document.addEventListener("resume", onResume, false);
+    }
+
+    // Handle the resume event
+    //
+    function onResume() {
+
+            setTimeout(function(){
+                navigator.notification.alert({
+                    "Aaaaaan we're back!!",
+                    noticeDismissed,
+                    "Missed You",
+                    "OK (but that's kinda creepy)"
+                });
+            }, 0);
+             resumes++;
+        
+            $('#resumes').html(resumes);
+
+    }
+
+    </script>
+  </head>
+  <body onload="onLoad()">
 
 
-<iframe name="frame" src="http://www.catalystproject.org.uk/dd/" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px">
-    </iframe>
+<!--<iframe name="frame" src="http://www.catalystproject.org.uk/dd/" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px">
+    </iframe>-->
 
-Please check your internet connection!
-<!--<div class='header'><h1>Home</h1></div>
-<div class='search-view'>
-<input class='search-key' type="text"/>
-<ul class='employee-list'></ul>
-</div>
--->
-<script src="phonegap.js"></script>
-<script src="lib/jquery-1.8.2.min.js"></script>
-<script src="js/storage/memory-store.js"></script>
-<script src="js/main.js"></script>
-
+Must be someone working on this! Please download the app again later.
 
 <div id="resumes" style="position:absolute;top:0px;right:0px;width=10px;height=10px;background:white">
 	10</div>
 
 
-</body>
-<!--<script src="phonegap.js"></script>-->
+
+
+
+  </body>
 </html>
