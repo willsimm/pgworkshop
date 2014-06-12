@@ -7,16 +7,39 @@
     <script type="text/javascript" charset="utf-8">
 
 	var resumes=0;
+	var loaded =0;
+
+	function setFrameLoaded (){
+		loaded =1;
+	}
 
     function onLoad(){
     	//count touch events
     	window.addEventListener('touchstart', onTouch, false);
     	document.addEventListener("deviceready", onDeviceReady, false);
 
+    	//periodically refresh
+		/*var refreshInterval = setInterval(function(){
+				$("#datadashboard").attr("src", $("#datadashboard").attr("src"));
+			},600000);*/
 
-    		var refreshInterval = setInterval(function(){
-  				$("#datadashboard").attr("src", $("#datadashboard").attr("src"));
-				},10000);
+		//periodically check the webpage is present
+
+		var checkInterval = setInterval(function(){
+
+				if (!loaded){
+					$("#datadashboard").attr("src", $("#datadashboard").attr("src"));
+					alert("trying again")
+				}
+				else{
+					alert("loaded OK")
+				}
+				
+			},10000)
+
+
+
+
     }
 
     // device APIs are available
@@ -26,6 +49,8 @@
 
     //count resume events
 	function onResume() {
+		//reload webpage
+		$("#datadashboard").attr("src", $("#datadashboard").attr("src"));
 		resumes++;
 		$('#resumes').html(resumes);
 		var deviceID = device.uuid;
@@ -42,10 +67,10 @@
   <body onload="onLoad()">
 
 
-<iframe name="frame" id="datadashboard" src="http://tiree-onsupply.co.uk/dd/" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px">
+<iframe onload="setFrameLoaded();" name="frame" id="datadashboard" src="http://tiree-onsupply.co.uk/dd/" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px;background:white">
     </iframe>
 
-Must be someone working on this! Please download the app again later.
+Loading... If not loaded within 10sec, please check your internet connection.
 
 <div id="resumes" style="position:absolute;top:0px;right:0px;width=10px;height=10px;background:white">
 	0</div>
