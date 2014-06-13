@@ -24,23 +24,28 @@
 			},600000);*/
 
 		//periodically check the webpage is present
-
 		var checkInterval = setInterval(function(){
 
 				if (!loaded){
+					//if its not loaded then reload it
 					$("#datadashboard").attr("src", $("#datadashboard").attr("src"));
-					alert("trying again")
+					//alert("trying again")
 				}
 				else{
-					alert("loaded OK")
+					//alert("loaded OK")
 				}
 				
 			},10000)
 
-
-
-
     }
+
+
+    //on load, check for network connection. if present then load the page
+
+
+
+
+    //after an hour, check if phone awake, if so reload it
 
     // device APIs are available
     function onDeviceReady() {
@@ -52,7 +57,7 @@
 		//reload webpage
 		$("#datadashboard").attr("src", $("#datadashboard").attr("src"));
 		resumes++;
-		$('#resumes').html(resumes);
+		//$('#resumes').html(resumes);
 		var deviceID = device.uuid;
 	}
 
@@ -72,8 +77,8 @@
 
 Loading... If not loaded within 10sec, please check your internet connection.
 
-<div id="resumes" style="position:absolute;top:0px;right:0px;width=10px;height=10px;background:white">
-	0</div>
+<!--<div id="resumes" style="position:absolute;top:0px;right:0px;width=10px;height=10px;background:white">
+	0</div>-->
 
 
 
